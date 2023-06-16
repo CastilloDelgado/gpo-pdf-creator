@@ -1,97 +1,79 @@
 const express = require("express");
 const router = express.Router();
-const path = require("path");
 
-const PdfPrinter = require("pdfmake");
-const fs = require("fs");
+const { getSettlement, getPrenomina } = require("../service");
 
-const fonts = require("../fonts");
-const ticketStyles = require("../styles/ticketStyles");
-const reportStyles = require("../styles/reportStyles");
-// const { liquidacionPortatilContent } = require("../templates/ticketContent");
-const { content } = require("../templates/ticketContent");
-const { estacionarioContent } = require("../templates/liquidacionEstacionario");
-const {
-  prenominaContent,
-} = require("../templates/liquidacionEstacionarioTemplate");
+const createLiquidacionOtif = require("../actions/createLiquidacionOtif");
+const createLiquidacionNoOtif = require("../actions/createLiquidacionNoOtif");
+const createLiquidacionEstacionario = require("../actions/createLiquidacionEstacionario");
+const createPrenominaEstacionario = require("../actions/createPrenominaEstacionario");
+const createPrenominaPortatil = require("../actions/createPrenominaPortatil");
 
-const {
-  createLiquidacionEstacionario,
-  createPrenominaEstacionario,
-} = require("../actions/estacionario/estacionario_liquidacion.js");
+// ----------------------------  LIQUIDACIONES  ---------------------------------
+//
+// Crear liquidacion en base al tipo de liquidacion
+// Esta funcion ejecuta el servicio settlement y obtiene el tipo de liquidacion
+// Dependiendo del tipo se identifica si es portatil o estacionario
+//
+//            Tipo         Vehículo       Liquidacion
+//            -----------------------------------------
+//            1            ?????          Estacionario
+//            2            ?????          Otif
+//            3            ?????          No Otif
+//
 
-// TICKET SETTINGS
-let liquidacionPortatilDefinition = {
-  content: content,
-  styles: ticketStyles,
-  pageSize: { width: 300, height: 1000 },
-};
+router.get("/api/v2/liquidacion", async (req, res, next) => {
+  try {
+    const response = await getSettlement(req.query.date, req.query.rfc);
 
-// FULL SIZE REPORT SETTINGS
-let liquidacionEstacionarioDefinition = {
-  content: estacionarioContent,
-  styles: reportStyles,
-};
+    if (!response?.data?.result?.tipo) {
+      response.data.result.tipo = 0;
+    }
 
-// FULL SIZE REPORT SETTINGS
-let prenominaEstacionarioDefinition = {
-  content: prenominaContent,
-  styles: reportStyles,
-};
-
-router.get("/estacionario/liquidacion", (req, res) => {
-  const printer = new PdfPrinter(fonts);
-  let pdfDoc = printer.createPdfKitDocument(liquidacionEstacionarioDefinition);
-  pdfDoc.pipe(fs.createWriteStream("./pdfs/estacionario-liquidacion.pdf"));
-  pdfDoc.end();
-  res.json({ message: "Reporte creado con exito!" });
-});
-
-router.get("/estacionario/prenomina", (req, res) => {
-  const printer = new PdfPrinter(fonts);
-  let pdfDoc = printer.createPdfKitDocument(prenominaEstacionarioDefinition);
-  pdfDoc.pipe(fs.createWriteStream("./pdfs/estacionario-prenomina.pdf"));
-  pdfDoc.end();
-  res.json({ message: "Reporte creado con exito!" });
-});
-
-router.get("/portatil/liquidacion", (req, res) => {
-  const printer = new PdfPrinter(fonts);
-  let pdfDoc = printer.createPdfKitDocument(liquidacionPortatilDefinition);
-  pdfDoc.pipe(fs.createWriteStream("./pdfs/portatil-liquidacion.pdf"));
-  pdfDoc.end();
-  res.json({ message: "Reporte creado con exito!" });
-});
-
-// SERVICIOS QUE RETORNAN EL ARCHIVO
-
-// Servicio para Liquidación Tanque Estacionario
-router.get("/api/v1/estacionario/liquidacion", createLiquidacionEstacionario);
-
-// Servicio para Prenomina Tanque Estacionario
-router.get("/api/v1/estacionario/prenomina", createPrenominaEstacionario);
-
-router.get("/new/portatil/liquidacion", (req, res) => {
-  const printer = new PdfPrinter(fonts);
-  let pdfDoc = printer.createPdfKitDocument(liquidacionPortatilDefinition);
-  pdfDoc.pipe(fs.createWriteStream("./src/routes/portatil-liquidacion.pdf"));
-  pdfDoc.end();
-  // res.json({ message: "Reporte creado con exito!" });
-
-  setTimeout(() => {
-    const options = {
-      root: path.join(__dirname),
+    const TIPOS_LIQUIDACION = {
+      0: () => {
+        res.json({ message: "Type not found" });
+      },
+      1: () =>
+        createLiquidacionEstacionario(req, res, next, response.data.result),
+      2: () => createLiquidacionOtif(req, res, next, response.data.result),
+      3: () => createLiquidacionNoOtif(req, res, next, response.data.result),
     };
 
-    var fileName = "portatil-liquidacion.pdf";
-    res.sendFile(fileName, options, function (err) {
-      if (err) {
-        next(err);
-      } else {
-        console.log("Sent:", fileName);
-      }
-    });
-  }, 1000);
+    TIPOS_LIQUIDACION[response?.data?.result?.tipo || 0]();
+  } catch (error) {
+    res.json(error);
+  }
+});
+
+// ----------------------------   PRENOMINAS   ---------------------------------
+//
+// Crear prenomina en base al tipo de  prenomina
+// Dependiendo del tipo se identifica si es portatil o estacionario
+//
+//            Tipo         Vehículo       Prenomina
+//            -----------------------------------------
+//            1            ?????          Estacionario
+//            2            ?????          Portatil
+//
+
+router.get("/api/v2/prenomina", async (req, res, next) => {
+  try {
+    const response = await getPrenomina(req.query.date, req.query.rfc);
+
+    if (!response?.data?.result?.tipo) {
+      response.data.result.tipo = 0;
+    }
+
+    const TIPOS_PRENOMINA = {
+      1: () => createPrenominaPortatil(req, res, next, data),
+      2: () => createPrenominaEstacionario(req, res, next, data),
+    };
+
+    TIPOS_PRENOMINA[response.data.result.tipo]();
+  } catch (error) {
+    res.json(error);
+  }
 });
 
 module.exports = router;

@@ -1,0 +1,504 @@
+{
+    "chofer": {
+        "ventasPortatil": {
+            "totalLiquidacion": 261.00000000000006,
+            "ventaConceptos": [
+                {
+                    "concepto": "EFEC/VENTAS",
+                    "total": 12.4
+                },
+                {
+                    "concepto": "CHEQUES",
+                    "total": 45.1
+                },
+                {
+                    "concepto": "Ventas con Tarjetas de credito",
+                    "total": 43.5
+                },
+                {
+                    "concepto": "Ventas con tarjeta de debito",
+                    "total": 56.3
+                },
+                {
+                    "concepto": "Transferencia",
+                    "total": 56.3
+                },
+                {
+                    "concepto": "Desc. Ped.",
+                    "total": 23.3
+                },
+                {
+                    "concepto": "Automaticos",
+                    "total": 24.1
+                }
+            ]
+        },
+        "ventasComisiones": {
+            "hoyKcil": 12,
+            "hoyCbono": 0,
+            "hoyComision": 0,
+            "acumKcil": 779,
+            "acumCbono": 0,
+            "acumComision": 0
+        },
+        "acumuladoParaBono": null,
+        "creditos": {
+            "hoyFaltantes": 0,
+            "hoyCreditos": 234.2,
+            "hoyAbono": 35.23,
+            "acumFaltantes": -35.23,
+            "acumCreditos": 45.3,
+            "acumAbono": 45.3
+        },
+        "comisionRange": [
+            {
+                "limiteInferior": 1,
+                "limiteSuperior": 50,
+                "comision": 3.86,
+                "selected": false
+            },
+            {
+                "limiteInferior": 51,
+                "limiteSuperior": 60,
+                "comision": 4.22,
+                "selected": false
+            },
+            {
+                "limiteInferior": 61,
+                "limiteSuperior": 70,
+                "comision": 4.28,
+                "selected": false
+            },
+            {
+                "limiteInferior": 71,
+                "limiteSuperior": 80,
+                "comision": 4.34,
+                "selected": false
+            },
+            {
+                "limiteInferior": 81,
+                "limiteSuperior": 1000,
+                "comision": 4.43,
+                "selected": false
+            },
+            {
+                "limiteInferior": 1,
+                "limiteSuperior": 50,
+                "comision": 3.86,
+                "selected": false
+            },
+            {
+                "limiteInferior": 51,
+                "limiteSuperior": 60,
+                "comision": 4.22,
+                "selected": false
+            },
+            {
+                "limiteInferior": 61,
+                "limiteSuperior": 70,
+                "comision": 4.28,
+                "selected": false
+            },
+            {
+                "limiteInferior": 71,
+                "limiteSuperior": 80,
+                "comision": 4.34,
+                "selected": false
+            },
+            {
+                "limiteInferior": 81,
+                "limiteSuperior": 1000,
+                "comision": 4.43,
+                "selected": false
+            }
+        ],
+        "bonoRange": [
+            {
+                "limiteInferior": 360,
+                "limiteSuperior": 409,
+                "comision": 0,
+                "selected": false
+            },
+            {
+                "limiteInferior": 410,
+                "limiteSuperior": 459,
+                "comision": 546.27,
+                "selected": false
+            },
+            {
+                "limiteInferior": 460,
+                "limiteSuperior": 509,
+                "comision": 1304.92,
+                "selected": false
+            },
+            {
+                "limiteInferior": 510,
+                "limiteSuperior": 559,
+                "comision": 2189.64,
+                "selected": false
+            },
+            {
+                "limiteInferior": 560,
+                "limiteSuperior": 609,
+                "comision": 3195.88,
+                "selected": false
+            },
+            {
+                "limiteInferior": 610,
+                "limiteSuperior": 659,
+                "comision": 4331.58,
+                "selected": false
+            },
+            {
+                "limiteInferior": 660,
+                "limiteSuperior": 709,
+                "comision": 5593.35,
+                "selected": false
+            },
+            {
+                "limiteInferior": 710,
+                "limiteSuperior": 759,
+                "comision": 6855.12,
+                "selected": false
+            },
+            {
+                "limiteInferior": 760,
+                "limiteSuperior": 809,
+                "comision": 8118.03,
+                "selected": false
+            },
+            {
+                "limiteInferior": 810,
+                "limiteSuperior": 1000,
+                "comision": 9382.06,
+                "selected": false
+            },
+            {
+                "limiteInferior": 360,
+                "limiteSuperior": 409,
+                "comision": 0,
+                "selected": false
+            },
+            {
+                "limiteInferior": 410,
+                "limiteSuperior": 459,
+                "comision": 546.27,
+                "selected": false
+            },
+            {
+                "limiteInferior": 460,
+                "limiteSuperior": 509,
+                "comision": 1304.92,
+                "selected": false
+            },
+            {
+                "limiteInferior": 510,
+                "limiteSuperior": 559,
+                "comision": 2189.64,
+                "selected": false
+            },
+            {
+                "limiteInferior": 560,
+                "limiteSuperior": 609,
+                "comision": 3195.88,
+                "selected": false
+            },
+            {
+                "limiteInferior": 610,
+                "limiteSuperior": 659,
+                "comision": 4331.58,
+                "selected": false
+            },
+            {
+                "limiteInferior": 660,
+                "limiteSuperior": 709,
+                "comision": 5593.35,
+                "selected": false
+            },
+            {
+                "limiteInferior": 710,
+                "limiteSuperior": 759,
+                "comision": 6855.12,
+                "selected": false
+            },
+            {
+                "limiteInferior": 760,
+                "limiteSuperior": 809,
+                "comision": 8118.03,
+                "selected": false
+            },
+            {
+                "limiteInferior": 810,
+                "limiteSuperior": 1000,
+                "comision": 9382.06,
+                "selected": false
+            }
+        ],
+        "conteoDias": {
+            "transcurridos": 27,
+            "trabajados": 19,
+            "porTranscurrir": -11
+        },
+        "nombreEmpleado": "JULIO ANTONIO HERNANDEZ PARTIDA",
+        "compania": null,
+        "fechaVenta": "2023-04-29 17:00:00",
+        "horaVenta": null,
+        "periodoNomina": "2023-04-21 AL 2023-05-05",
+        "numeroEconomicoUnidad": "104D",
+        "tipoServicio": "EQUIPO PORTATIL",
+        "zona": "7",
+        "nombreCajera": "Meredith Sofia Lopez Lopez"
+    },
+    "ayudante": {
+        "ventasPortatil": {
+            "totalLiquidacion": 261.00000000000006,
+            "ventaConceptos": [
+                {
+                    "concepto": "EFEC/VENTAS",
+                    "total": 12.4
+                },
+                {
+                    "concepto": "CHEQUES",
+                    "total": 45.1
+                },
+                {
+                    "concepto": "Ventas con Tarjetas de credito",
+                    "total": 43.5
+                },
+                {
+                    "concepto": "Ventas con tarjeta de debito",
+                    "total": 56.3
+                },
+                {
+                    "concepto": "Transferencia",
+                    "total": 56.3
+                },
+                {
+                    "concepto": "Desc. Ped.",
+                    "total": 23.3
+                },
+                {
+                    "concepto": "Automaticos",
+                    "total": 24.1
+                }
+            ]
+        },
+        "ventasComisiones": {
+            "hoyKcil": 12,
+            "hoyCbono": 0,
+            "hoyComision": 0,
+            "acumKcil": 779,
+            "acumCbono": 0,
+            "acumComision": 0
+        },
+        "acumuladoParaBono": null,
+        "creditos": {
+            "hoyFaltantes": 0,
+            "hoyCreditos": 234.2,
+            "hoyAbono": 35.23,
+            "acumFaltantes": -35.23,
+            "acumCreditos": 45.3,
+            "acumAbono": 45.3
+        },
+        "comisionRange": [
+            {
+                "limiteInferior": 1,
+                "limiteSuperior": 50,
+                "comision": 2.73,
+                "selected": false
+            },
+            {
+                "limiteInferior": 51,
+                "limiteSuperior": 60,
+                "comision": 2.95,
+                "selected": false
+            },
+            {
+                "limiteInferior": 61,
+                "limiteSuperior": 70,
+                "comision": 3.03,
+                "selected": false
+            },
+            {
+                "limiteInferior": 71,
+                "limiteSuperior": 80,
+                "comision": 3.04,
+                "selected": false
+            },
+            {
+                "limiteInferior": 81,
+                "limiteSuperior": 1000,
+                "comision": 3.08,
+                "selected": false
+            },
+            {
+                "limiteInferior": 1,
+                "limiteSuperior": 50,
+                "comision": 2.73,
+                "selected": false
+            },
+            {
+                "limiteInferior": 51,
+                "limiteSuperior": 60,
+                "comision": 2.95,
+                "selected": false
+            },
+            {
+                "limiteInferior": 61,
+                "limiteSuperior": 70,
+                "comision": 3.03,
+                "selected": false
+            },
+            {
+                "limiteInferior": 71,
+                "limiteSuperior": 80,
+                "comision": 3.04,
+                "selected": false
+            },
+            {
+                "limiteInferior": 81,
+                "limiteSuperior": 1000,
+                "comision": 3.08,
+                "selected": false
+            }
+        ],
+        "bonoRange": [
+            {
+                "limiteInferior": 360,
+                "limiteSuperior": 409,
+                "comision": 0,
+                "selected": false
+            },
+            {
+                "limiteInferior": 410,
+                "limiteSuperior": 459,
+                "comision": 378.19,
+                "selected": false
+            },
+            {
+                "limiteInferior": 460,
+                "limiteSuperior": 509,
+                "comision": 833.61,
+                "selected": false
+            },
+            {
+                "limiteInferior": 510,
+                "limiteSuperior": 559,
+                "comision": 1366.25,
+                "selected": false
+            },
+            {
+                "limiteInferior": 560,
+                "limiteSuperior": 609,
+                "comision": 1972.72,
+                "selected": false
+            },
+            {
+                "limiteInferior": 610,
+                "limiteSuperior": 659,
+                "comision": 2648.47,
+                "selected": false
+            },
+            {
+                "limiteInferior": 660,
+                "limiteSuperior": 709,
+                "comision": 3405.98,
+                "selected": false
+            },
+            {
+                "limiteInferior": 710,
+                "limiteSuperior": 759,
+                "comision": 4165.77,
+                "selected": false
+            },
+            {
+                "limiteInferior": 760,
+                "limiteSuperior": 809,
+                "comision": 4925.56,
+                "selected": false
+            },
+            {
+                "limiteInferior": 810,
+                "limiteSuperior": 1000,
+                "comision": 5683.08,
+                "selected": false
+            },
+            {
+                "limiteInferior": 360,
+                "limiteSuperior": 409,
+                "comision": 0,
+                "selected": false
+            },
+            {
+                "limiteInferior": 410,
+                "limiteSuperior": 459,
+                "comision": 378.19,
+                "selected": false
+            },
+            {
+                "limiteInferior": 460,
+                "limiteSuperior": 509,
+                "comision": 833.61,
+                "selected": false
+            },
+            {
+                "limiteInferior": 510,
+                "limiteSuperior": 559,
+                "comision": 1366.25,
+                "selected": false
+            },
+            {
+                "limiteInferior": 560,
+                "limiteSuperior": 609,
+                "comision": 1972.72,
+                "selected": false
+            },
+            {
+                "limiteInferior": 610,
+                "limiteSuperior": 659,
+                "comision": 2648.47,
+                "selected": false
+            },
+            {
+                "limiteInferior": 660,
+                "limiteSuperior": 709,
+                "comision": 3405.98,
+                "selected": false
+            },
+            {
+                "limiteInferior": 710,
+                "limiteSuperior": 759,
+                "comision": 4165.77,
+                "selected": false
+            },
+            {
+                "limiteInferior": 760,
+                "limiteSuperior": 809,
+                "comision": 4925.56,
+                "selected": false
+            },
+            {
+                "limiteInferior": 810,
+                "limiteSuperior": 1000,
+                "comision": 5683.08,
+                "selected": false
+            }
+        ],
+        "conteoDias": {
+            "transcurridos": 27,
+            "trabajados": 19,
+            "porTranscurrir": -11
+        },
+        "nombreEmpleado": "LEOPOLDO RAFAEL SOTO JUAREZ",
+        "compania": null,
+        "fechaVenta": "2023-04-29 17:00:00",
+        "horaVenta": null,
+        "periodoNomina": "2023-04-21 AL 2023-05-05",
+        "numeroEconomicoUnidad": "104D",
+        "tipoServicio": "EQUIPO PORTATIL",
+        "zona": "7",
+        "nombreCajera": "Meredith Sofia Lopez Lopez"
+    },
+    "fechaImpresion": "2023-06-16 12:57:54",
+    "tipo": 3
+}
